@@ -26,8 +26,10 @@ class InsuranceController extends Controller
         return redirect('/');
     }
 
-    public function storeApi(Request $request){
-        $obj = Insurance::create($request->except('_token'));
+    public function storeApi(StoreInsuranceRequest $request){
+        $validated = $request->validated();
+
+        $obj = Insurance::create($validated);
 
         return response()
             ->json($obj, Response::HTTP_CREATED);

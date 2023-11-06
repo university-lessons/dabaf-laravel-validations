@@ -29,4 +29,11 @@ class StoreInsuranceRequest extends FormRequest
             'price' => 'required|decimal:2'
         ];
     }
+
+    public function attributes(): array
+    {
+        return [
+            'price' => 'orçamento'
+        ];
+    }
 }
