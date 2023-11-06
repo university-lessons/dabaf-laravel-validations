@@ -26,6 +26,7 @@
             <p><b>Nome</b> {{ $i->name }}</p>
             <p><b>Marca</b> {{ $i->brand }}</p>
             <p><b>Modelo</b> {{ $i->model }}</p>
+            <p><b>Orçamento</b> {{ $i->price }}</p>
         @endforeach
     </body>
 </html>

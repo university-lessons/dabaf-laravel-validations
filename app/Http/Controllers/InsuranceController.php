@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreInsuranceRequest;
 use App\Models\Insurance;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -16,8 +17,12 @@ class InsuranceController extends Controller
         return view('insurance.new');
     }
 
-    public function store(Request $request){
-        Insurance::create($request->except('_token'));
+    public function store(StoreInsuranceRequest $request){
+        
+        $validated = $request->validated();
+
+        Insurance::create($validated);
+
         return redirect('/');
     }
 

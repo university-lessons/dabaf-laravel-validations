@@ -24,19 +24,34 @@
             @csrf
             
             <label for="name">Nome do Assegurado</label>
-            <input type="text" placeholder="Nome do cliente assegurado" name="name">
+            <input type="text" placeholder="Nome do cliente assegurado" name="name" value="{{old('name')}}">
+            @error('name')
+                <div>{{ $message }}</div>
+            @enderror
 
             <label for="brand">Marca</label>
-            <input type="text" placeholder="Marca do carro" name="brand">
+            <input type="text" placeholder="Marca do carro" name="brand" value="{{old('brand')}}">
+            @error('brand')
+                <div>{{ $message }}</div>
+            @enderror
 
             <label for="model">Model</label>
-            <input type="text" placeholder="Modelo do carro" name="model">
+            <input type="text" placeholder="Modelo do carro" name="model" value="{{old('model')}}">
+            @error('model')
+                <div>{{ $message }}</div>
+            @enderror
 
             <label for="description">Descrição do Sinistro</label>
-            <textarea placeholder="Descrição do sinistro..." name="description"></textarea>
+            <textarea placeholder="Descrição do sinistro..." name="description">{{old('description')}}</textarea>
+            @error('description')
+                <div>{{ $message }}</div>
+            @enderror
 
             <label for="price">Orçamento</label>
-            <input type="number" placeholder="Orçamento do reparo" name="price">
+            <input type="number" placeholder="Orçamento do reparo" name="price" value="{{old('price')}}">
+            @error('price')
+                <div>{{ $message }}</div>
+            @enderror
 
             <input class="button-primary" type="submit" value="Cadastrar Sinistro">
 
